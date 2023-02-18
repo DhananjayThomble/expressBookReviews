@@ -17,7 +17,7 @@ app.use("/customer/auth/*", function auth(req, res, next) {
     }
 
     // verify token
-    const token = req.header.authorization.split(" ")[1];
+    const token = req.headers.authorization.split(" ")[1];
 
     jwt.verify(token, "fingerprint_customer", (err, decoded) => {
         if (err) {
